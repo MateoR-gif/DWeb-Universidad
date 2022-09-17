@@ -4,7 +4,7 @@
       <h1>Listado de productos</h1>
     </center>
     <b-card
-      title="Card Title"
+      title="Hola"
       img-src="https://picsum.photos/600/300/?image=25"
       img-alt="Image"
       img-top
@@ -36,8 +36,9 @@ export default{
     async loadProducts(){
       const url = "http://localhost:3001/productos"
       const response = await this.$axios.get(url) //el $ hace que automáticamente se busque el método en nuxt.config.js
-      console.log(response)
+      const nombreFruta = response.data.data[0].name
+      console.log(nombreFruta)
     }
   }
-} 
+}
 </script>

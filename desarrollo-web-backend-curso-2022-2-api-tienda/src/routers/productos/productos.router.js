@@ -6,7 +6,7 @@ const express = require('express')
 
 const FileProvider = require('../../Controllers/FileProvider')
 
-// Crear una instancia 
+// Crear una instancia
 const router = express.Router()
 
 router.post('/productos', (req, res) => {
@@ -23,7 +23,7 @@ router.get('/productos', (req, res) => {
             ok:true,
             message: "Productos Consultados",
             data: productos
-        })  
+        })
     } catch (error) {
         const message="Ocurrió un Error"
         res.status(500).send(res.send({
@@ -32,7 +32,6 @@ router.get('/productos', (req, res) => {
             data: error.toString()
         })) //Envía el Código de Estado 500(Internal Server Error)
     }
-    
 })
 
 router.put('/productos/:id', (req, res) => {
